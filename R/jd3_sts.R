@@ -22,7 +22,7 @@ sts<-function(y, level=1, slope=1, cycle=-1, noise=1
     stop("y must be a time series")
   }
   seasonal<-match.arg(seasonal)
-  jsts=.jcall("demetra/sts/r/StsEstimation", "Ldemetra/sts/r/StsEstimation$Results;", "process", ts_r2jd(y), 
+  jsts<-.jcall("demetra/sts/r/StsEstimation", "Ldemetra/sts/r/StsEstimation$Results;", "process", ts_r2jd(y), 
               as.integer(level), as.integer(slope), as.integer(cycle), as.integer(noise), seasonal)
   l<-proc_numeric(jsts, "levelvar")
   s<-proc_numeric(jsts, "slopevar")

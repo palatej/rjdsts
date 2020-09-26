@@ -1,4 +1,4 @@
-#' @include jd3_ts.R
+#' @include zzz.R jd3_ts.R
 #' @checkmate
 
 proc_numeric<-function(rslt, name){
