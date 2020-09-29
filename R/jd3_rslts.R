@@ -140,8 +140,7 @@ proc_dictionary<-function(name){
 proc_likelihood<-function(jrslt, prefix){
   return (list(
     ll=proc_numeric(jrslt, paste(prefix,"ll", sep="")),
-    ssq=proc_numeric(jrslt, paste(prefix,"ssq", sep="")),
-    ser=proc_numeric(jrslt, paste(prefix,"ser", sep="")),
+    ssq=proc_numeric(jrslt, paste(prefix,"ssqerr", sep="")),
     nobs=proc_int(jrslt, paste(prefix,"nobs", sep="")),
     neffective=proc_int(jrslt, paste(prefix,"neffective", sep="")),
     nparams=proc_int(jrslt, paste(prefix,"nparams", sep="")),

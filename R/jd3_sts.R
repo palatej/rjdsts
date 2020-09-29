@@ -63,13 +63,13 @@ print.JDSTS<-function(m){
   cat("Structural time series", "\n\n")
   cat("Variances:\n")
   s<-m$model$level
-  if (! is.nan(s) && s >=0) cat("level: ", format(round(s, 6), scientific = FALSE), "\n")
+  if (! is.na(s) && s >=0) cat("level: ", format(round(s, 6), scientific = FALSE), "\n")
   s<-m$model$slope
-  if (! is.nan(s) && s >=0) cat("slope: ", format(round(s, 6), scientific = FALSE), "\n")
+  if (! is.na(s) && s >=0) cat("slope: ", format(round(s, 6), scientific = FALSE), "\n")
   s<-m$model$seas
-  if (! is.nan(s) && s >=0) cat("seas: ", format(round(s, 6), scientific = FALSE), "\n")
+  if (! is.na(s) && s >=0) cat("seas: ", format(round(s, 6), scientific = FALSE), "\n")
   s<-m$model$n
-  if (! is.nan(s) && s >=0) cat("noise: ", format(round(s, 6), scientific = FALSE), "\n\n")
+  if (! is.na(s) && s >=0) cat("noise: ", format(round(s, 6), scientific = FALSE), "\n\n")
   s<-m$likelihood$ll
   cat("LogLikelihood: ", format(round(s, 5), scientific = FALSE), "\n")
   s<-m$estimation$score

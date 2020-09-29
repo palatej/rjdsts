@@ -14,9 +14,10 @@ Imports:
 License: EUPL
 LazyData: TRUE
 Collate:
-    'zzz.R'
     'jd3_ts.R'
+    'zzz.R'
     'jd3_rslts.R'
+    'jd3_seasonalbreaks.R'
     'jd3_sts.R'
     'jd3_stsoutliers.R'
 Suggests:

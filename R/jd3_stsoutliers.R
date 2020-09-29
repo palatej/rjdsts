@@ -21,7 +21,7 @@ NULL
 #' @export
 #'
 #' @examples
-sts.outliers<-function(y, level=1, slope=1, cycle=-1, noise=1
+stsoutliers<-function(y, level=1, slope=1, cycle=-1, noise=1
               , seasonal=c("Trigonometric", "Dummy", "Crude", "HarrisonStevens", "Fixed", "Unused"),
               X=NULL,X.td=NULL, cv=0, tcv=0, estimation.forward=c("Score", "Point", "Full"), estimation.backward=c("Point", "Score", "Full")
               ){
