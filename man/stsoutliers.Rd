@@ -8,7 +8,6 @@ stsoutliers(
   y,
   level = 1,
   slope = 1,
-  cycle = -1,
   noise = 1,
   seasonal = c("Trigonometric", "Dummy", "Crude", "HarrisonStevens", "Fixed", "Unused"),
   X = NULL,
@@ -25,8 +24,6 @@ stsoutliers(
 \item{level}{}
 
 \item{slope}{}
-
-\item{cycle}{}
 
 \item{noise}{}
 
