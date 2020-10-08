@@ -1,7 +1,7 @@
 Package: rjdsts
 Type: Package
 Title: STS models based on JD+ 
-Version: 0.2.3
+Version: 0.2.4
 Authors@R: as.person(c(
     "Jean Palate <jean.palate@nbb.be> [aut,cre]"
       ))

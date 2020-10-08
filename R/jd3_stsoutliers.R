@@ -11,6 +11,9 @@ NULL
 #' @param seasonal 
 #' @param X 
 #' @param X.td 
+#' @param ao 
+#' @param ls 
+#' @param so 
 #' @param cv 
 #' @param tcv 
 #' @param estimation.forward 
@@ -20,10 +23,10 @@ NULL
 #' @export
 #'
 #' @examples
-stsoutliers<-function(y, level=1, slope=1, noise=1
-              , seasonal=c("Trigonometric", "Dummy", "Crude", "HarrisonStevens", "Fixed", "Unused"),
-              X=NULL,X.td=NULL, cv=0, tcv=0, estimation.forward=c("Score", "Point", "Full"), estimation.backward=c("Point", "Score", "Full")
-              ){
+stsoutliers<-function(y, level=1, slope=1, noise=1, seasonal=c("Trigonometric", "Dummy", "Crude", "HarrisonStevens", "Fixed", "Unused"),
+              X=NULL, X.td=NULL, ao=T, ls=T, so=F, 
+              cv=0, tcv=0, estimation.forward=c("Score", "Point", "Full"), 
+              estimation.backward=c("Point", "Score", "Full")){
   
   if (!is.ts(y)){
     stop("y must be a time series")
@@ -42,7 +45,7 @@ stsoutliers<-function(y, level=1, slope=1, noise=1
   
   jsts<-.jcall("demetra/sts/r/StsOutliersDetection", "Ldemetra/sts/r/StsOutliersDetection$Results;", "process", ts_r2jd(y), 
               as.integer(level), as.integer(slope), as.integer(noise), seasonal, matrix_r2jd(X),
-              cv, tcv, estimation.forward, estimation.backward)
+              ao, ls, so, cv, tcv, estimation.forward, estimation.backward)
   model<-list(
     y=as.numeric(y),
     variables=proc_vector(jsts, "variables"),
