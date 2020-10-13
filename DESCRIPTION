@@ -17,9 +17,11 @@ Collate:
     'jd3_ts.R'
     'zzz.R'
     'jd3_rslts.R'
+    'jd3_regarima.R'
     'jd3_seasonalbreaks.R'
     'jd3_sts.R'
     'jd3_stsoutliers.R'
+    'jd3_tramo.R'
 Suggests:
     knitr,
     rmarkdown
