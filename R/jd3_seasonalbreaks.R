@@ -19,7 +19,7 @@ NULL
 #' @export
 #'
 #' @examples
-seasonalbreaks<-function(y, level=1, slope=1, noise=1, seasonal=c("Trigonometric", "Dummy", "Crude", "HarrisonStevens", "Fixed", "Unused"),
+seasonalbreaks<-function(y, level=1, slope=1, noise=1, seasonal=c("HarrisonStevens", "Trigonometric", "Dummy", "Crude", "Fixed", "Unused"),
                        X=NULL,X.td=NULL){
   
   if (!is.ts(y)){
@@ -37,6 +37,6 @@ seasonalbreaks<-function(y, level=1, slope=1, noise=1, seasonal=c("Trigonometric
   so<-.jcall("demetra/sts/r/StsOutliersDetection", "[D", "seasonalBreaks", ts_r2jd(y), 
                as.integer(level), as.integer(slope), as.integer(noise), seasonal, matrix_r2jd(X))
   
-  return (so)
+  return (ts(so, frequency = frequency(y), start=start(y)))
 }
   
